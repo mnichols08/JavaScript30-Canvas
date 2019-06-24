@@ -6,7 +6,7 @@ ctx.strokeStyle = "#BADA55";
 ctx.lineJoin = "round";
 ctx.lineCap = "round";
 ctx.lineWidth = "1079";
-ctx.globalCompositeOperation = "xor"; 
+ctx.globalCompositeOperation = "xor";  // Makes the design look really awesome
 let isDrawing = false;
 let lastX = 0;
 let lastY = 0;
@@ -26,10 +26,10 @@ function draw(e) {
   [lastX, lastY] = [e.offsetX, e.offsetY];
   hue++;
   if (hue >= 360) {
-    hue++;
+    hue++; // Rotates the hue from 0 - 360 and repeats
   }
   if (ctx.lineWidth >= 1080 || ctx.lineWidth <= 1) {
-    direction = !direction;
+    direction = !direction; // makes the marker grow or shrink with a max width of 1080
   }
   if (direction) {
     ctx.lineWidth++;
